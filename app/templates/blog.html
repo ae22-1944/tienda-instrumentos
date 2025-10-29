@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Curso de guitarra para principiantes" />
+    <meta name="keywords" content="musica, guitarra, instrumentos" />
+    <meta name="author" content="Adán Estévez" />
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+    <title>Aprende Guitarra - Blog</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+        <div class="d-flex w-100 justify-content-between align-items-center">
+          <a class="navbar-brand" href="https://ae22-1944.github.io">
+            <img
+              src="{% static 'logo.png' %}"
+              alt="Logo"
+              width="30"
+              height="30"
+              class="d-inline-block align-text-top"
+            />
+            Aprende Guitarra
+          </a>
+          <div class="d-flex align-items-center">
+            <button
+              id="themeToggle"
+              class="btn btn-outline-light me-4"
+              aria-label="Toggle Dark Mode"
+            >
+              <i id="themeIcon" class="bi bi-moon"></i>
+            </button>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item">
+              <a class="nav-link text-nowrap" aria-current="page" href="{% url 'home' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-nowrap active" href="{% url 'blog' %}">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-nowrap" href="{% url 'contacto' %}">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-5">
+      <div class="my-5">
+        <h2 class="mb-4">Blog</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 d-flex flex-column">
+              <img
+                src="https://images.unsplash.com/photo-1605020420620-20c943cc4669?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="La Guitarra: Un Viaje a Través de la Historia"
+              />
+              <div class="card-body">
+                <h5 class="card-title">La Guitarra: Un Viaje a Través de la Historia</h5>
+                <p class="card-text">
+                  Descubre cómo la guitarra se ha transformado a lo largo de los siglos.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="{% url 'historia' %}" class="btn btn-primary">Leer más</a>
+                  <small class="text-muted">12 de febrero de 2023</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 d-flex flex-column">
+              <img
+                src="https://images.unsplash.com/photo-1543062094-d22540cadf2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="Cinco Consejos para Aprender a Tocar la Guitarra Más Rápido"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Cinco Consejos para Aprender a Tocar la Guitarra Más Rápido
+                </h5>
+                <p class="card-text">
+                  Conoce consejos prácticos para mejorar tu habilidad con la guitarra.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="{% url 'consejos' %}" class="btn btn-primary">Leer más</a>
+                  <small class="text-muted">3 de agosto de 2022</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 d-flex flex-column">
+              <img
+                src="https://images.unsplash.com/photo-1621784166258-c6fdfff31879?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="Los Diferentes Tipos de Guitarra y Sus Usos"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Los Diferentes Tipos de Guitarra y Sus Usos</h5>
+                <p class="card-text">
+                  Explora los distintos tipos de guitarras y para qué se usan cada una.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="{% url 'tipos' %}" class="btn btn-primary">Leer más</a>
+                  <small class="text-muted">27 de noviembre de 2022</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 d-flex flex-column">
+              <img
+                src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="Cinco Datos Curiosos Sobre la Guitarra"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cinco Datos Curiosos Sobre la Guitarra</h5>
+                <p class="card-text">
+                  Descubre curiosidades fascinantes sobre el mundo de la guitarra.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="{% url 'curiosidades' %}" class="btn btn-primary">Leer más</a>
+                  <small class="text-muted">5 de abril de 2023</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 d-flex flex-column">
+              <img
+                src="https://images.unsplash.com/photo-1558323838-22bc79c1e750?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="La Importancia de la Digitación en la Guitarra y Cómo Mejorarla"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  La Importancia de la Digitación en la Guitarra y Cómo Mejorarla
+                </h5>
+                <p class="card-text">
+                  Aprende cómo mejorar tu digitación para tocar mejor y más rápido.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="{% url 'digitacion' %}" class="btn btn-primary">Leer más</a>
+                  <small class="text-muted">19 de enero de 2024</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+      <small>&copy; 2025 Aprende Guitarra</small>
+      <div class="my-3">
+        <a href="politicas.html" class="text-white">Políticas de Privacidad</a>
+      </div>
+      <div>
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>
